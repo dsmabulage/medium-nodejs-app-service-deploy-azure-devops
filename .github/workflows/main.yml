@@ -1,0 +1,18 @@
+name: Deploy Docker Imge to Docker Hub
+
+on:
+  push:
+    branches: ['main']
+
+env:
+  ACCOUNT_NAME: ${{ secrets.ACCOUNT_NAME }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
+
+    
